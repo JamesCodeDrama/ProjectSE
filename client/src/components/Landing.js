@@ -6,7 +6,7 @@ class Landing extends Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <h1>Fond Home Care</h1>
-        Collect sadness from the bottom of your heart
+        take care from the bottom of our hearts
       </div>
     );
   }

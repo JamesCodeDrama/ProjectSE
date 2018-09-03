@@ -18,6 +18,17 @@ module.exports = app => {
     res.send('Thanks for voting!');
   });
 
+  app.post('/api/profile', requireLogin, async (req, res) => {
+    const { telephone } = req.body;
+    try {
+      req.user.telephone = telephone;
+      const user = await req.user.save();
+      res.send(user);
+    } catch (err) {
+      res.status(422).send(err);
+    }
+  });
+
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 

@@ -18,6 +18,9 @@ class Header extends Component {
         );
       default:
         return [
+          <li key="0">
+            <a href="/profile">Profile</a>
+          </li>,
           <li key="1">
             <Payments />
           </li>,
@@ -32,7 +35,7 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props);
+    if (this.props.auth) console.log(this.props.auth);
     return (
       <nav>
         <div className="nav-wrapper">
